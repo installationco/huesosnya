@@ -2,11 +2,10 @@
 <html>
   <head>
     <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	  <script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script> 
 	  <script type="text/javascript"> 
-	  VK.init({apiId: 5148155}); 
+	    VK.init({apiId: 5148155}); 
 	  </script> 
     <link rel="stylesheet" type="text/css" href="228.css">
     <!-- 2. Use an HTML Import to bring in some elements. -->
@@ -63,13 +62,13 @@
         <div>
           <p></p>
           <div id = "left-button"><paper-button><b>ZAHUESOSIT' PERVOGO</b></paper-button><paper-button id = "right-button"><b>ZAHUESOSIT' VTOROGO</b></paper-button></div>
-		      <div id="vk_auth"></div> 
-			    <script type="text/javascript"> 
-			      .Widgets.Auth("vk_auth", {width: "200px", authUrl: '/dev/Auth'}); 
-			    </script>
         </div>
         <div>
           <h3></h3>
+          <div id="vk_auth"></div>
+          <script type="text/javascript">
+          VK.Widgets.Auth("vk_auth", {width: "200px", authUrl: '/dev/Auth'});
+          </script>
         </div>
       </iron-pages>
     <!--</template>-->
