@@ -5,11 +5,16 @@ body, html
 	color: rgba(0,0,0,.8);
 	margin: 0;
 	padding: 0;
+  overflow-x:  hidden;
 }
 paper-toolbar
 {
   background-color: yellow;
   color:red;
+}
+paper-button
+{
+  color: #3F51B5;
 }
 [main]
 {
@@ -45,6 +50,7 @@ h1
 	margin: 0;
 	text-align: center;
 	text-shadow: 0px 1px 30px black;
+  transition: 2s;
 }
 h2
 {
@@ -55,6 +61,7 @@ h2
 	margin: 0;
 	text-align: center;
 	text-shadow: 0px 1px 20px black;
+  transition: 1s;
 }
 h3
 {
@@ -84,6 +91,38 @@ paper-tabs, core-toolbar {
 
 #welcome
 {
-  background-image: url(bg.jpg);
+  background: rgba(63, 81, 181, 0) url(bg.jpg);
+  /*background-blend-mode: saturation;*/
+  background-size: cover;
   padding: 5em;
+  transition: 2s;
+}
+#kostil
+{
+  opacity: 0;
+  background-color: rgba(63, 81, 181, 0);
+  transition: opacity 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20em;
+  margin: 0;
+  padding: 0;
+}
+
+iron-page
+{
+  margin: 2em;
+}
+
+#left-button
+{
+  position:relative;
+  left: 57.5em;
+}
+
+#right-button
+{
+  position:relative;
+  right: 55.5em;
 }
