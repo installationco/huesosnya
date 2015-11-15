@@ -83,10 +83,10 @@
     						alert('user: '+response.session.mid);
     						VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
   								if(r.response) {
+									alert(r.response[0].photo_50);
 									avatar.src = r.response[0].photo_50; 
   								} 
 							}); 
-							alert(r.response[0].photo_50);
   							} else {
     						alert('not auth');
   						}
