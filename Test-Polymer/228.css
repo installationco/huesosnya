@@ -100,14 +100,16 @@ paper-tabs, core-toolbar {
 #kostil
 {
   opacity: 0;
-  background-color: rgba(63, 81, 181, 0);
+  background: #3F51B5;
   transition: opacity 2s;
   position: absolute;
   top: 0;
   left: 0;
-  height: 20em;
+  height: 0;
+  width: 100%;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 iron-page
