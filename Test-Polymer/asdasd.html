@@ -68,7 +68,7 @@
 
         <div class="container" id="body" fit layout vertical>
         		<p></p>
-          		<paper-icon-button  id="login_button" src="vk.png" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
+          		<paper-icon-button  id="login_button" src="vk.jpg" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
         </div>
       </paper-header-panel>
 
@@ -94,7 +94,14 @@
 					//VK.UI.button('login_button');
 	  			</script> 
 
-         
+         <script> 
+		var pages = document.querySelector('iron-pages'); 
+		var tabs = document.querySelector('paper-menu'); 
+
+		tabs.addEventListener('iron-select', function() { 
+		pages.selected = tabs.selected; 
+		}); 
+		</script>
        <!-- <script>
 // Функция получения друзей и вывода их на экран
 function doIt(){
