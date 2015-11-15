@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script> 
 		<script type="text/javascript"> 
 	    	VK.init({apiId: 5148155}); 
+	    	
 	    </script>
     	<link rel="stylesheet" type="text/css" href="228.css">
     	<!-- 2. Use an HTML Import to bring in some elements. -->
@@ -80,13 +81,17 @@
 	    			function authInfo(response) {
   						if (response.session) {
     						alert('user: '+response.session.mid);
+    						VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
+  								if(r.response) {
+									avatar.src = r.response[0].photo_200; 
+  								} 
+							}); 
   							} else {
     						alert('not auth');
   						}
 					}
 					VK.Auth.getLoginStatus(authInfo);
 					VK.UI.button('login_button');
-					avatar.src = response.photo_50;
 	  			</script> 
 
          
