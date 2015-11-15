@@ -66,7 +66,7 @@
           <h3>Huesosnya</h3>
         </paper-toolbar>
 
-        <div class="container" fit layout vertical>
+        <div class="container" id="body" fit layout vertical>
         		<p></p>
           		<div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
         </div>
@@ -83,7 +83,7 @@
     						alert('user: '+response.session.mid);
     						VK.Api.call('users.get', {user_ids: 6492}, function(r) { 
   								if(r.response) {
-									avatar.src = r.response[0].photo_medium;
+									avatar.src = r.response[0].photo_50;
   								} 
 							}); 
   							} else {
@@ -95,5 +95,29 @@
 	  			</script> 
 
          
+         <script>
+// Функция получения друзей и вывода их на экран
+function doIt(){
+        /*
+        VK.api('метод', {параметр: "значение"}, callback функция{
+        // работаем с полученными данными
+        });
+        */
+
+	VK.api("friends.get", {fields: "photo_medium"}, function(data) { 
+		// Действия с полученными данными 
+		for(c=0;c<data.response.length;c++){
+			$("body").append("<img src='"+data.response[c].photo_medium+"'>
+
+");
+		}
+	});
+}
+$(document).ready(function(){
+	doIt();
+});
+</script>
+
+
   </body>
 </html>
