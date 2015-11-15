@@ -51,8 +51,9 @@
 
     <paper-drawer-panel id = "drawerPanel">
       <paper-header-panel drawer>
-      	<iron-image id="avatar" style="width:400px; height:400px;" sizing="contain" src=""></iron-image>
+      	
       	<paper-menu selected="0">
+      	<image id="avatar" style="width:150px; height:150px;" src="bg.jpg"></image>
   			<paper-item>Stream</paper-item>
   			<paper-item>TopList</paper-item>
 		</paper-menu>
@@ -85,7 +86,7 @@
 					}
 					VK.Auth.getLoginStatus(authInfo);
 					VK.UI.button('login_button');
-					avatar.src = users.get.photo_50;
+					avatar.src = response.photo_50;
 	  			</script> 
 
          
