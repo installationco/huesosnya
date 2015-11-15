@@ -68,7 +68,7 @@
 
         <div class="container" id="body" fit layout vertical>
         		<p></p>
-          		<div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
+          		<paper-icon-button  id="login_button" src="vk.png" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
         </div>
       </paper-header-panel>
 
@@ -81,7 +81,7 @@
 	    			function authInfo(response) {
   						if (response.session) {
     						alert('user: '+response.session.mid);
-    						VK.Api.call('users.get', {user_ids: 6492}, function(r) { 
+    						VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
   								if(r.response) {
 									avatar.src = r.response[0].photo_50;
   								} 
@@ -91,11 +91,11 @@
   						}
 					}
 					VK.Auth.getLoginStatus(authInfo);
-					VK.UI.button('login_button');
+					//VK.UI.button('login_button');
 	  			</script> 
 
          
-        <script>
+       <!-- <script>
 // Функция получения друзей и вывода их на экран
 function doIt(){
         /*
@@ -116,7 +116,7 @@ function doIt(){
 $(document).ready(function(){
 	doIt();
 });
-</script>
+</script>-->
 
 
   </body>
