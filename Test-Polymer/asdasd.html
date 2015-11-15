@@ -69,7 +69,52 @@
         <div class="container" fit layout vertical>
           <iron-pages selected="{{page}}" valueattr="data-category">
             <section data-category = "vote">
-              asd
+              <div id = "welcome">
+      <h1>Huesosnya</h1>
+    </div>
+    <!--<paper-input label="Your name here" width = "200" height = "200"></paper-input>
+    <paper-button>Say Hello</paper-button>
+    <div id="greeting"></div>-->
+    <!--<template is="auto-binding">-->
+      <paper-tabs selected = "0">
+        <paper-tab id = "upperTab">ZAHUESOSIT'</paper-tab>
+        <paper-tab id = "upperTab">PROPALIT'</paper-tab>
+      </paper-tabs>
+      
+      <iron-pages selected = "0">
+        <div>
+          <p></p>
+          <div id = "left-button"><paper-button><b>ZAHUESOSIT' PERVOGO</b></paper-button><paper-button id = "right-button"><b>ZAHUESOSIT' VTOROGO</b></paper-button></div>
+        </div>
+        <div>
+        <paper-card heading="Card Title">
+  <div class="card-content">Some content</div>
+  <div class="card-actions">
+    <paper-button>Some action</paper-button>
+  </div>
+</paper-card>
+          <h3></h3>
+          <div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
+          <script type="text/javascript"> 
+	    VK.init({apiId: 5148155}); 
+	    function authInfo(response) {
+  if (response.session) {
+    alert('user: '+response.session.mid);
+  } else {
+    alert('not auth');
+  }
+}
+VK.Auth.getLoginStatus(authInfo);
+VK.UI.button('login_button');
+	  </script> 
+	  <paper-card heading="Card Title">
+  <div class="card-content">Some content</div>
+  <div class="card-actions">
+    <paper-button>Some action</paper-button>
+  </div>
+</paper-card>
+        </div>
+      </iron-pages>
             </section>
             <section data-category = "view">
               asddd
