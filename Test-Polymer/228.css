@@ -18,11 +18,11 @@ paper-button
 }
 [main]
 {
-  background-color: #AAAAAA;
+  /*background-color: #AAAAAA;*/
 }
 [drawer]
 {
-  background-color: #FFFFFF;
+  /*background-color: #FFFFFF;*/
 }
 
 :root
