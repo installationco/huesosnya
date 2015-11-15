@@ -1,8 +1,8 @@
 body, html
 {
-	background-color: #E8EAF6;
+	background-color: #ECEFF1;
 	font-family: Roboto;
-	color: rgba(0,0,0,.8);
+	color: rgba(0,0,0,.4);
 	margin: 0;
 	padding: 0;
   overflow-x:  hidden;
@@ -22,11 +22,16 @@ paper-button
 }
 [drawer]
 {
-  /*background-color: #FFFFFF;*/
+  background-color: #CFD8DC;
+}
+paper-menu
+{
+  background-color: #CFD8DC; 
+  padding: 0; 
 }
 
 #bar {
-    background-color: gray;
+    background-color: #009688;
 }
 
 

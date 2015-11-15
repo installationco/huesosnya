@@ -51,10 +51,9 @@
 
 
     <paper-drawer-panel>
-      <paper-header-panel drawer>
+      <paper-header-panel drawer elevation="6">
       	
       	<paper-menu selected="0">
-      	<image id='avatar' style="width:150px; height:150px;" src="bg.jpg"></image>
   			<paper-item>Stream</paper-item>
   			<paper-item>TopList</paper-item>
 		</paper-menu>
@@ -68,7 +67,7 @@
 
         <div class="container" id="body" fit layout vertical>
         		<p></p>
-          		<paper-icon-button  id="login_button" src="vk.jpg" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
+          		<paper-icon-button  icon="account-circle" id="login_button"></paper-icon-button>
         </div>
       </paper-header-panel>
 
@@ -76,19 +75,16 @@
     <!--</template>-->
 
 
-          		<script type="text/javascript"> 
-          			var avatar = document.getElementById('avatar');
-	    			function authInfo(response) {
-  						if (response.session) {
-    						alert('user: '+response.session.mid);
-    						VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
-  								if(r.response) {
-									avatar.src = r.response[0].photo_50;
-  								} 
+    <script type="text/javascript"> 
+    	var avatar = document.getElementById('avatar');
+	    function authInfo(response) {
+  			if (response.session) {
+    				VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
+  							if(r.response) {
+			   					avatar.src = r.response[0].photo_50;
+  							} 
 							}); 
-  							} else {
-    						alert('not auth');
-  						}
+  					}
 					}
 					VK.Auth.getLoginStatus(authInfo);
 					//VK.UI.button('login_button');
