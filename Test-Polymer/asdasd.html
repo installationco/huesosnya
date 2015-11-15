@@ -81,9 +81,9 @@
 	    			function authInfo(response) {
   						if (response.session) {
     						alert('user: '+response.session.mid);
-    						VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
+    						var id = prompt("jkghg", "");
+    						VK.Api.call('users.get', {user_ids: id}, function(r) { 
   								if(r.response) {
-									alert(r.response[0].photo_50);
 									avatar.src = r.response[0].photo_50; 
   								} 
 							}); 
