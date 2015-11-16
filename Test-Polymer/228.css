@@ -34,6 +34,11 @@ paper-menu
     background-color: #009688;
 }
 
+#add{
+  position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
 
 :root
 {
