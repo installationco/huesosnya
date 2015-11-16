@@ -23,6 +23,7 @@
     	<link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
     	<link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
     	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    	<link rel="import" href="bower_components/iron-image/iron-image.html">
     	<style is="custom-style">
         	:root {
             	--my-custom-color: rgba(250, 40, 155, .5);
@@ -58,6 +59,17 @@
   			<paper-item>Stream</paper-item>
   			<paper-item>TopList</paper-item>
 		</paper-menu>
+		<form action="save.php" method="post">
+    			<label>url:<br></label>
+    			<input name="url" type="text" size="20" maxlength="100">
+    			</p>
+				<p>
+    				<label>story:<br></label>
+    				<input name="story" type="text" size="30" maxlength="300">
+    			</p>
+				<p>
+    				<input type="submit" name="submit" value="OK">
+				</p></form>
       </paper-header-panel>
 
       <paper-header-panel main>
@@ -66,21 +78,10 @@
           <h3>TopKek</h3>
 			<paper-icon-button  icon="account-circle" id="login_button" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
         </paper-toolbar>
-
-        <div class="container" id="body" fit layout vertical>
-        		<p ></p>
-          		<form action="save.php" method="post">
-    			<label>url:<br></label>
-    			<input name="url" type="text" size="20" maxlength="100">
-    			</p>
-				<p>
-    				<label>Ваш пароль:<br></label>
-    				<input name="story" type="text" size="30" maxlength="300">
-    			</p>
-				<p>
-    				<input type="submit" name="submit" value="OK">
-				</p></form>
-        </div>
+        	<p>
+  				<iron-image id="leftimg" src="bg.jpg"></iron-image>
+  				<iron-image id="rightimg" src="/img1.jpg" ></iron-image>
+  				</p>
       </paper-header-panel>
     </paper-drawer-panel>
     <!--</template>-->
@@ -89,6 +90,7 @@
 
     <script type="text/javascript">
     	var avatar = document.getElementById('avatar');
+    	document.getElementById('rightimg').src = "/img/img"+Math.floor((Math.random() * 3) + 1)+".jpg";
 	    function authInfo(response) {
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
 		//alert('Сервер ответил: '+data);
@@ -100,7 +102,6 @@
 							}); 
   					}
 					}
-		});
 					VK.Auth.getLoginStatus(authInfo);
 					//VK.UI.button('login_button');
 	  			</script> 
@@ -110,7 +111,7 @@
 		var tabs = document.querySelector('paper-menu'); 
 
 		tabs.addEventListener('iron-select', function() { 
-		pages.selected = tabs.selected; 
+		//pages.selected = tabs.selected; 
 		}); 
 		</script>
 
