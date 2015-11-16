@@ -59,16 +59,19 @@
   		    <paper-item data-category="sec1">Stream</paper-item>
   		    <paper-item data-category="sec2">TopList</paper-item>
 		    </paper-menu>
-		    <form action="save.php" method="post">
+		    <form>
     		  <paper-input label="url" name="url" type="text" size="20" maxlength="100"></paper-input>
           <p>
     		    <paper-input label="Input label" name="Input label" type="text" size="30" maxlength="300">
           </p>
 				  <p>
-    		    <paper-input type="submit" label="submit" value="OK">
+    		    <paper-button raised type="button" id="saveButton">
+    		    <iron-icon icon="check"></iron-icon>
+    		    OK
+    		    </paper-button>
 				  </p>
         </form>
-        <div class="drawerFooter">asd</div>
+        <div class="drawerFooter"></div>
       </paper-header-panel>
 
       <paper-header-panel main>
@@ -119,30 +122,20 @@
 		tabs.addEventListener('iron-select', function() { 
 		  pages.selected = tabs.selected; 
 		}); 
+
+		$(function() {
+ 			$('#saveButton').click(function() {
+  				$.ajax({
+    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/save.php', dataType: "text", success: function(data) {
+      
+    				}, error:function (xhr, ajaxOptions, thrownError){
+      					alert(xhr.status);
+      					alert(thrownError);
+    				} 
+  				});
+ 			});
+		});
 		</script>
-
-       <!-- <script>
-// Функция получения друзей и вывода их на экран
-function doIt(){
-        /*
-        VK.api('метод', {параметр: "значение"}, callback функция{
-        // работаем с полученными данными
-        });
-        */
-
-	VK.api("friends.get", {fields: "photo_medium"}, function(data) { 
-		// Действия с полученными данными 
-		for(c=0;c<data.response.length;c++){
-			$("body").append("<img src='"+data.response[c].photo_medium+"'>
-
-");
-		}
-	});
-}
-$(document).ready(function(){
-	doIt();
-});
-</script>-->
 
 
   </body>
