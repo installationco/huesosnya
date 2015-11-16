@@ -66,8 +66,9 @@
         </paper-toolbar>
 
         <div class="container" id="body" fit layout vertical>
-        		<p></p>
-          		<paper-icon-button  icon="account-circle" id="login_button"></paper-icon-button>
+        		<p ></p>
+          		<paper-icon-button  icon="account-circle" id="login_button" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
+          		
         </div>
       </paper-header-panel>
 
@@ -75,9 +76,11 @@
     <!--</template>-->
 
 
-    <script type="text/javascript"> 
+    <script type="text/javascript">
     	var avatar = document.getElementById('avatar');
 	    function authInfo(response) {
+	    	$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
+		alert('Сервер ответил: '+data);
   			if (response.session) {
     				VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
   							if(r.response) {
@@ -86,6 +89,7 @@
 							}); 
   					}
 					}
+		});
 					VK.Auth.getLoginStatus(authInfo);
 					//VK.UI.button('login_button');
 	  			</script> 
@@ -98,6 +102,7 @@
 		pages.selected = tabs.selected; 
 		}); 
 		</script>
+
        <!-- <script>
 // Функция получения друзей и вывода их на экран
 function doIt(){
