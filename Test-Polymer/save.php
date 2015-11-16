@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST['url'])) { $id = $_POST['url']; if ($id == '') { unset($id);} }
 include ("connect.php");
-$result = mysql_query("SELECT * FROM photos WHERE `photo`='$id'",$db);
-$myrow = mysql_fetch_array($result);
+$result = mysqli_query($db,"SELECT * FROM photos WHERE `photo`='$id'");
+$myrow = mysqli_fetch_array($result);
 if (!empty($myrow['id'])) {
 	exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }
