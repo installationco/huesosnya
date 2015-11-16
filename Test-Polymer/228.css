@@ -30,6 +30,12 @@ paper-menu
   padding: 0; 
 }
 
+paper-input
+{
+  padding-left:10px;
+  padding-right:10px;
+}
+
 #bar {
     background-color: #009688;
 }
@@ -115,7 +121,6 @@ paper-tabs, core-toolbar {
   background: rgba(63, 81, 181, 0) url(bg.jpg);
   /*background-blend-mode: saturation;*/
   background-size: cover;
-  padding: 3em;
   transition: 2s;
 }
 #kostil
@@ -133,10 +138,6 @@ paper-tabs, core-toolbar {
   cursor: pointer;
 }
 
-iron-page
-{
-  margin: 1em;
-}
 
 #left-button
 {
@@ -148,4 +149,18 @@ iron-page
 {
   position:relative;
   right: 55.5em;
+}
+p
+{
+  padding: 0px;
+}
+.aligner
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.drawerFooter
+{
+  align-self: flex-end;
 }
