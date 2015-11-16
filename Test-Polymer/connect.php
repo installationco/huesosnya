@@ -1,6 +1,6 @@
 <?php
 $dblocation = "mysql.hostinger.com.ua";
-$dbname = "u300663046_data1";
+$dbname = "photos";
 $dbuser = "u300663046_data1";
 $dbpasswd = "101013born";
 $dbcnx = @mysql_connect($dblocation,$dbuser,$dbpasswd);

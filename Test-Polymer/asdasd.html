@@ -68,7 +68,17 @@
         <div class="container" id="body" fit layout vertical>
         		<p ></p>
           		<paper-icon-button  icon="account-circle" id="login_button" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
-          		
+          		<form action="save_user.php" method="post">
+    			<label>url:<br></label>
+    			<input name="url" type="text" size="20" maxlength="100">
+    			</p>
+				<p>
+    				<label>Ваш пароль:<br></label>
+    				<input name="story" type="text" size="30" maxlength="300">
+    			</p>
+				<p>
+    				<input type="submit" name="submit" value="OK">
+				</p></form>
         </div>
       </paper-header-panel>
 
@@ -79,8 +89,8 @@
     <script type="text/javascript">
     	var avatar = document.getElementById('avatar');
 	    function authInfo(response) {
-	    	$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
-		alert('Сервер ответил: '+data);
+	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
+		//alert('Сервер ответил: '+data);
   			if (response.session) {
     				VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
   							if(r.response) {
