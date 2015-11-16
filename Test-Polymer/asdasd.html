@@ -59,7 +59,7 @@
   		    <paper-item data-category="sec1">Stream</paper-item>
   		    <paper-item data-category="sec2">TopList</paper-item>
 		    </paper-menu>
-		    <form>
+		    <form id="photoForm">
     		  <paper-input label="url" name="url" type="text" size="20" maxlength="100"></paper-input>
           <p>
     		    <paper-input label="Input label" name="Input label" type="text" size="30" maxlength="300">
@@ -127,6 +127,19 @@
  			$('#saveButton').click(function() {
   				$.ajax({
     				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/save.php', dataType: "text", success: function(data) {
+      
+    				}, error:function (xhr, ajaxOptions, thrownError){
+      					alert(xhr.status);
+      					alert(thrownError);
+    				} 
+  				});
+ 			});
+		});
+
+		$(function() {
+ 			$('login_button').click(function() {
+  				$.ajax({
+    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", success: function(data) {
       
     				}, error:function (xhr, ajaxOptions, thrownError){
       					alert(xhr.status);
