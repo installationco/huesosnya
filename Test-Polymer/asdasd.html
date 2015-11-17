@@ -56,7 +56,7 @@
 
     <paper-drawer-panel>
       <paper-header-panel drawer>
-      <image src="default.png" class="round" style="height: 6em; width: 6em; padding: 1em;"></image>
+      <image id="avatar" src="default.png" class="round" style="height: 6em; width: 6em; padding: 1em;"></image>
       <div id="name">Name</div>
       	<paper-menu selected="{{page}}" valueattr="data-category">
   		    <paper-item data-category="sec1">Stream</paper-item>
@@ -173,7 +173,7 @@
 		$(function() {
  			$('login_button').click(function() {
   				$.ajax({
-    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", success: function(data) {
+    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", data: ({findres: idnomb}) ,success: function(data) {
       
     				}, error:function (xhr, ajaxOptions, thrownError){
       					alert(xhr.status);
