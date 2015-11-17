@@ -169,10 +169,9 @@
 		});
 
 		$(function() {
- 			$('login_button').click(function() {
+ 			$('#login_button').click(function() {
   				$.ajax({
-    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", success: function(data) {
-      
+    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", data: 'ID=response.session.mid', success: function(data) {
     				}, error:function (xhr, ajaxOptions, thrownError){
       					alert(xhr.status);
       					alert(thrownError);
@@ -181,6 +180,10 @@
  			});
 		});
 		</script>
+<<<<<<< HEAD
+=======
+<!----https://sites.google.com/site/webkss2kurs---->
+>>>>>>> 684444c18380a3f3fa2b841c8a5b053ac71d02ce
 
   </body>
 </html>
