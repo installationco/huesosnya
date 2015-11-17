@@ -19,7 +19,8 @@
     	<link rel="import" href="bower_components/iron-icons/iron-icons.html">
     	<link rel="import" href="bower_components/iron-icon/iron-icon.html">
     	<link rel="import" href="bower_components/paper-item/paper-item.html">
-    	<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+      <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+      <link rel="import" href="bower_components/paper-card/paper-card.html">
     	<link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
     	<link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
     	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
@@ -68,12 +69,12 @@
           </p>
 				  <p>
     		    <paper-button raised type="button" id="saveButton">
-    		    <iron-icon icon="check"></iron-icon>
-    		    OK
+    		      <iron-icon icon="check"></iron-icon>
+    		      OK
     		    </paper-button>
 				  </p>
         </form>
-        <div class="drawerFooter"></div>
+        <div class="drawerFooter">Ovidiopol'skaya Pravda production</div>
       </paper-header-panel>
 
       <paper-header-panel main>
@@ -85,8 +86,18 @@
 
         <iron-pages selected="{{page}}" valueattr="data-category">
           <section data-category = "sec1">
-            <iron-image id="leftimg" src="bg.jpg"></iron-image>
-            <iron-image id="rightimg" src="/img1.jpg" ></iron-image>
+            <paper-card>
+              <div class="card-content">
+                <iron-image id="rightimg" src="/img1.jpg" ></iron-image>
+              </div>
+              <div class="card-actions">          
+                <paper-button id="kekButton" flex>Kek</paper-button>
+                <paper-button flex>SemiKek</paper-button>
+                <paper-button>NotKek</paper-button>
+                <paper-input label="Tip something about kek"></paper-input>
+                <paper-button id="submitButton">Submit</paper-button>    
+              </div>
+            </paper-card>
           </section>
           <section data-category = "sec2">
             <p>kek</p>
@@ -102,7 +113,23 @@
     <script type="text/javascript">
     	var avatar = document.getElementById('avatar');
     	var uname = document.getElementById('name');
-    	document.getElementById('rightimg').src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.floor((Math.random() * 3) + 1)+".jpg";
+      var imageKek = document.getElementById('rightimg');
+    	imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 3)+".jpg";
+      /*
+      var h = document.getElementById('rightimg').naturalHeight;
+      var w = document.getElementById('rightimg').naturalWidth;
+      if(w > h)
+      {
+        var tmp = (w/$(window).width()) * 100;
+        alert(tmp);
+        imageKek.css('width', tmp + '%');
+      }
+      else
+      {
+        var tmp = (h/$(window).height()) * 100;
+        alert(tmp);
+        imageKek.css('width', tmp + '%');      
+      }*/
 	    function authInfo(response) {
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
 		//alert('Сервер ответил: '+data);
@@ -117,9 +144,10 @@
 					}
 					VK.Auth.getLoginStatus(authInfo);
 					//VK.UI.button('login_button');
-	  			</script> 
+	  </script> 
 
-         <script> 
+
+    <script> 
 		var pages = document.querySelector('iron-pages'); 
 		var tabs = document.querySelector('paper-menu'); 
     tabs.selected = 0;
@@ -153,7 +181,6 @@
  			});
 		});
 		</script>
-
 
   </body>
 </html>

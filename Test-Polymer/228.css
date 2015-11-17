@@ -12,10 +12,31 @@ paper-toolbar
   background-color: yellow;
   color:red;
 }
+paper-card
+{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
 paper-button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#saveButton
 {
   background-color: #4285f4;
   color: #fff;
+}
+#submitButton
+{
+  background-color: #4285f4;
+  color: #fff;
+}
+#kekButton
+{
+  color: #4285f4;  
 }
 [main]
 {
@@ -54,7 +75,6 @@ paper-input
 
 #rightimg{
   right: 0;
-  max-width: 400px;
 }
 
 .round{
@@ -167,9 +187,7 @@ p
 }
 .aligner
 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 .drawerFooter
 {
