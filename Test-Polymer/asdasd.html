@@ -171,7 +171,7 @@
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
 		//alert('Сервер ответил: '+data);
   			if (response.session) {
-    				VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
+    				VK.Api.call('users.get', {user_ids: response.session.mid, fields: photo_100}, function(r) { 
   							if(r.response) {
   								idnomb = response.session.mid;
   								uname.innerHTML = r.response[0].first_name;
