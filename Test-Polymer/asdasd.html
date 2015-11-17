@@ -141,7 +141,7 @@
 		});
 
 		$(function() {
- 			$('login_button').click(function() {
+ 			$('#login_button').click(function() {
   				$.ajax({
     				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", data: "ID=response.session.mid", success: function(data) {
     				}, error:function (xhr, ajaxOptions, thrownError){
