@@ -57,6 +57,16 @@ paper-input
   max-width: 400px;
 }
 
+.round{
+  border-radius: 3em;
+}
+
+#name{
+  color: #212121;
+  float: right;
+  padding: 2em;
+}
+
 :root
 {
 	

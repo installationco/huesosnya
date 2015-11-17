@@ -55,7 +55,8 @@
 
     <paper-drawer-panel>
       <paper-header-panel drawer>
-      <image src="default.png"></image>
+      <image src="default.png" class="round" style="height: 6em; width: 6em; padding: 1em;"></image>
+      <div id="name">Name</div>
       	<paper-menu selected="{{page}}" valueattr="data-category">
   		    <paper-item data-category="sec1">Stream</paper-item>
   		    <paper-item data-category="sec2">TopList</paper-item>
@@ -100,6 +101,7 @@
 
     <script type="text/javascript">
     	var avatar = document.getElementById('avatar');
+    	var uname = document.getElementById('name');
     	document.getElementById('rightimg').src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.floor((Math.random() * 3) + 1)+".jpg";
 	    function authInfo(response) {
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
@@ -107,7 +109,8 @@
   			if (response.session) {
     				VK.Api.call('users.get', {user_ids: response.session.mid}, function(r) { 
   							if(r.response) {
-			   					avatar.src = r.response[0].photo_50;
+  								uname.innerHTML = r.response[0].first_name;
+			   					avatar.src = r.response[0].photo;
   							} 
 							}); 
   					}
