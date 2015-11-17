@@ -126,7 +126,7 @@
 
       $('#img').load(function(){
         h = $(this).height();
-        w = $(this).width();   
+        w = $(this).width();  
         var tmp;
         $('paper-card').css('height', (h+16) + 'px');
         if(h * $(document).height() >= w * $(document).width())
@@ -137,14 +137,16 @@
         {
           tmp = $(document).width() * 0.4 / w;
         }
+        var leftPad = (-0.5) * (tmp - 1) * w;
+        if(leftPad > 50)leftPad = 50;
         $('.card-content').css({
           '-webkit-transform' : 'scale(' + tmp + ')',
           '-moz-transform'    : 'scale(' + tmp + ')',
           '-ms-transform'     : 'scale(' + tmp + ')',
           '-o-transform'      : 'scale(' + tmp + ')',
-          'transform'         : 'scale(' + tmp + ')',
-          'position'           : 'relative',
-          'left' : (-0.5) * (tmp - 1) * w + 'px'
+          'transform'         : 'scale(' + tmp + ')'//,
+          //'position'           : 'relative',
+          //'left' : leftPad + 'px'
         });
         $('paper-card').css('height', $('paper-card').height() * tmp);
       });
