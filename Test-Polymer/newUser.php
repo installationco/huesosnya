@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET[response.session.mid])) { $id = $_GET[response.session.mid]; if ($id == '') { unset($id);} }
+if (isset($_GET['ID'])) { $id = $_GET['ID']; if ($id == '') { unset($id);} }
 include ("connect.php");
 $result = mysqli_query($db,"SELECT * FROM users WHERE `id`='$id'");
 $myrow = mysqli_fetch_array($result);

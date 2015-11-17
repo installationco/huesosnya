@@ -143,8 +143,7 @@
 		$(function() {
  			$('login_button').click(function() {
   				$.ajax({
-    				type: "POST", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", success: function(data) {
-      
+    				type: "GET", url: 'http://rlvote.96.lt/Test-Polymer/newUser.php', dataType: "text", data: "ID=response.session.mid", success: function(data) {
     				}, error:function (xhr, ajaxOptions, thrownError){
       					alert(xhr.status);
       					alert(thrownError);
@@ -153,7 +152,7 @@
  			});
 		});
 		</script>
-
+<!----https://sites.google.com/site/webkss2kurs---->
 
   </body>
 </html>
