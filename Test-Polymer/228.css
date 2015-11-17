@@ -24,6 +24,11 @@ paper-button
     align-items: center;
     justify-content: center;
 }
+.card-actions
+{
+  position: absolute;
+  right: 0;
+}
 #saveButton
 {
   background-color: #4285f4;
@@ -42,6 +47,7 @@ paper-button
 {
   /*background-color: #AAAAAA;*/
 }
+
 [drawer]
 {
   background-color: #CFD8DC;

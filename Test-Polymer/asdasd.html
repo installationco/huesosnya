@@ -17,7 +17,8 @@
     	<link rel="import" href="bower_components/paper-menu/paper-menu.html">
     	<link rel="import" href="bower_components/iron-pages/iron-pages.html">
     	<link rel="import" href="bower_components/iron-icons/iron-icons.html">
-    	<link rel="import" href="bower_components/iron-icon/iron-icon.html">
+      <link rel="import" href="bower_components/iron-icon/iron-icon.html">
+      <link rel="import" href="bower_components/iron-list/iron-list.html">
     	<link rel="import" href="bower_components/paper-item/paper-item.html">
       <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
       <link rel="import" href="bower_components/paper-card/paper-card.html">
@@ -96,11 +97,16 @@
                 <paper-button>NotKek</paper-button>
                 <paper-input label="Tip something about kek"></paper-input>
                 <paper-button id="submitButton">Submit</paper-button>    
+                <paper-button id="nextKek">Next Kek</paper-button>    
               </div>
             </paper-card>
           </section>
+
           <section data-category = "sec2">
-            <p>kek</p>
+            <iron-list>
+              <iron-item>Kek 1</iron-item>
+              <iron-item>Kek 2</iron-item>
+            </iron-list>
           </section>
         </iron-pages>
 
@@ -115,6 +121,36 @@
     	var uname = document.getElementById('name');
       var imageKek = document.getElementById('rightimg');
     	imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 3)+".jpg";
+      var h, w;
+
+      $('#img').load(function(){
+        h = $(this).height();
+        w = $(this).width();   
+        var tmp;
+        $('paper-card').css('height', (h+16) + 'px');
+        if(h * $(document).height() >= w * $(document).width())
+        {
+          tmp = $(document).height() * 0.5 / h;
+        }
+        else
+        {
+          tmp = $(document).width() * 0.4 / w;
+        }
+        $('.card-content').css({
+          '-webkit-transform' : 'scale(' + tmp + ')',
+          '-moz-transform'    : 'scale(' + tmp + ')',
+          '-ms-transform'     : 'scale(' + tmp + ')',
+          '-o-transform'      : 'scale(' + tmp + ')',
+          'transform'         : 'scale(' + tmp + ')',
+          'position'           : 'relative',
+          'left' : (-0.5) * (tmp - 1) * w + 'px'
+        });
+        $('paper-card').css('height', $('paper-card').height() * tmp);
+      });
+
+      $('#nextKek').bind('click', function() { 
+        imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 3)+".jpg";
+      }); 
       /*
       var h = document.getElementById('rightimg').naturalHeight;
       var w = document.getElementById('rightimg').naturalWidth;
