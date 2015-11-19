@@ -97,7 +97,7 @@
                 <paper-button>NotKek</paper-button>
                 <paper-input label="Tip something about kek"></paper-input>
                 <paper-button id="submitButton">Submit</paper-button>    
-                <paper-button id="nextKek" onclick="adf();">Next Kek</paper-button>   
+                <paper-button id="nextKek">Next Kek</paper-button>   
                 </div>  
             </paper-card>
           </section>
@@ -149,15 +149,9 @@
        $('paper-card').css('height', $('paper-card').height() * tmp);
       });
 
-      function adf(response) { 
-      	if (response.session) {
-    				VK.Api.call('friends.get', {user_id: response.session.mid, order: random, fields: "photo_medium"}, function(r) { 
-  							if(r.response) {
-			   					imageKek.src = r.response[0].photo_medium;
-  							} 
-							}); 
-  					}
-  				}
+      
+    				
+  					
 					
         //imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 35)+".jpg";
       
@@ -170,6 +164,11 @@
   								idnomb = response.session.mid;
   								uname.innerHTML = r.response[0].first_name;
 			   					avatar.src = r.response[0].photo_medium;
+  							} 
+							}); 
+    				VK.Api.call('friends.get', {user_id: response.session.mid, order: random, fields: "photo_medium"}, function(r) { 
+  							if(r.response) {
+			   					imageKek.src = r.response[0].photo_medium;
   							} 
 							}); 
   					}
