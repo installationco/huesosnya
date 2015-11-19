@@ -12,23 +12,21 @@ paper-toolbar
   background-color: yellow;
   color:red;
 }
+
 paper-card
 {
     display: flex;
     align-items: center;
     justify-content: center
 }
+
 paper-button
 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.card-actions
-{
-  position: absolute;
-  right: 0;
-}
+
 #saveButton
 {
   background-color: #4285f4;
@@ -75,12 +73,12 @@ paper-input
 }
 
 #leftimg{
-  left: 2em;
-  max-width: 400px;
+  position: absolute;
+  right: 2em;
 }
 
 #rightimg{
-  right: 0;
+  left: 0;
 }
 
 .round{
@@ -88,9 +86,10 @@ paper-input
 }
 
 #name{
+  position: absolute;
   color: #212121;
-  float: right;
-  padding: 2em;
+  left: 8em;
+  top: 3em;
 }
 
 :root
@@ -111,22 +110,10 @@ paper-input
 
 h1
 {
-	color: white;
-	font-weight: 200;
-	font-size: 100px;
-	padding: 0;
-	margin: 0;
 	text-align: center;
-	text-shadow: 0px 1px 30px black;
-  transition: 2s;
 }
 h2
 {
-	font-weight: 100;
-	font-size: 20px;
-	padding: 0;
-	margin: 0;
-	text-align: center;
 }
 h3
 {

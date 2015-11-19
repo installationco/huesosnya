@@ -90,15 +90,15 @@
             <paper-card>
               <div class="card-content">
                 <iron-image id="rightimg" src="/img1.jpg" ></iron-image>
-              </div>
-              <div class="card-actions">          
+              </div> 
+              <div id="leftimg">      
                 <paper-button id="kekButton" flex>Kek</paper-button>
                 <paper-button flex>SemiKek</paper-button>
                 <paper-button>NotKek</paper-button>
                 <paper-input label="Tip something about kek"></paper-input>
                 <paper-button id="submitButton">Submit</paper-button>    
-                <paper-button id="nextKek">Next Kek</paper-button>    
-              </div>
+                <paper-button id="nextKek">Next Kek</paper-button>   
+                </div>  
             </paper-card>
           </section>
 
@@ -126,49 +126,33 @@
 
       $('#img').load(function(){
         h = $(this).height();
-        w = $(this).width();  
+        w = $(this).width(); 
+        var kek = h/w; 
         var tmp;
         $('paper-card').css('height', (h+16) + 'px');
-        if(h * $(document).height() >= w * $(document).width())
+
+        if(kek <= 1)
         {
-          tmp = $(document).height() * 0.5 / h;
+        	tmp = $(document).width() * 0.4 / w;
         }
         else
         {
-          tmp = $(document).width() * 0.4 / w;
+          tmp = $(document).height() * 0.5 / h;
         }
-        var leftPad = (-0.5) * (tmp - 1) * w;
-        if(leftPad > 50)leftPad = 50;
-        $('.card-content').css({
+        $('#rightimg').css({
           '-webkit-transform' : 'scale(' + tmp + ')',
           '-moz-transform'    : 'scale(' + tmp + ')',
           '-ms-transform'     : 'scale(' + tmp + ')',
           '-o-transform'      : 'scale(' + tmp + ')',
-          'transform'         : 'scale(' + tmp + ')'//,
-          //'position'           : 'relative',
-          //'left' : leftPad + 'px'
+          'transform'         : 'scale(' + tmp + ')'
         });
-        $('paper-card').css('height', $('paper-card').height() * tmp);
+       $('paper-card').css('height', $('paper-card').height() * tmp);
       });
 
       $('#nextKek').bind('click', function() { 
         imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 35)+".jpg";
       }); 
-      /*
-      var h = document.getElementById('rightimg').naturalHeight;
-      var w = document.getElementById('rightimg').naturalWidth;
-      if(w > h)
-      {
-        var tmp = (w/$(window).width()) * 100;
-        alert(tmp);
-        imageKek.css('width', tmp + '%');
-      }
-      else
-      {
-        var tmp = (h/$(window).height()) * 100;
-        alert(tmp);
-        imageKek.css('width', tmp + '%');      
-      }*/
+      
 	    function authInfo(response) {
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
 		//alert('Сервер ответил: '+data);
