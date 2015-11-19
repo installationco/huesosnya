@@ -149,7 +149,7 @@
        $('paper-card').css('height', $('paper-card').height() * tmp);
       });
 
-      $('#nextKek').bind('click', function() { 
+      $('#nextKek').bind('click', function adf(response) { 
       	if (response.session) {
     				VK.Api.call('friends.get', {user_id: response.session.mid, order: random, fields: "photo_medium"}, function(r) { 
   							if(r.response) {
@@ -157,7 +157,7 @@
   							} 
 							}); 
   					}
-					}
+					
         //imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 35)+".jpg";
       }); 
       
