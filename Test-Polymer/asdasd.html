@@ -80,31 +80,7 @@
           <h3>TopKek</h3>
         </paper-toolbar>
 
-        <iron-pages selected="{{page}}" valueattr="data-category">
-          <section data-category = "sec1">
-            <paper-card>
-              <div class="card-content">
-                <iron-image id="rightimg" src="/img1.jpg" ></iron-image>
-              </div> 
-              <div id="leftimg">      
-                <paper-button id="kekButton" flex>Kek</paper-button>
-                <paper-button flex>SemiKek</paper-button>
-                <paper-button>NotKek</paper-button>
-                <paper-input label="Tip something about kek"></paper-input>
-                <paper-button id="submitButton">Submit</paper-button>    
-                <paper-button id="nextKek">Next Kek</paper-button>   
-                </div>  
-            </paper-card>
-          </section>
-
-          <section data-category = "sec2">
-            <iron-list>
-              <iron-item>Kek 1</iron-item>
-              <iron-item>Kek 2</iron-item>
-            </iron-list>
-          </section>
-        </iron-pages>
-
+        
       </paper-header-panel>
     </paper-drawer-panel>
     <!--</template>-->
@@ -114,40 +90,9 @@
     <script type="text/javascript">
     	var avatar = document.getElementById('avatar');
     	var uname = document.getElementById('name');
-      var imageKek = document.getElementById('rightimg');
-      var idnomb;
-    	imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 35)+".jpg";
-      var h, w;
 
-      $('#img').load(function(){
-        h = $(this).height();
-        w = $(this).width(); 
-        var kek = h/w; 
-        var tmp;
-        $('paper-card').css('height', (h+16) + 'px');
-
-        if(kek <= 1)
-        {
-        	tmp = $(document).width() * 0.45 / w;
-        }
-        else
-        {
-          tmp = $(document).height() * 0.6 / h;
-        }
-        $('#rightimg').css({
-          '-webkit-transform' : 'scale(' + tmp + ')',
-          '-moz-transform'    : 'scale(' + tmp + ')',
-          '-ms-transform'     : 'scale(' + tmp + ')',
-          '-o-transform'      : 'scale(' + tmp + ')',
-          'transform'         : 'scale(' + tmp + ')'
-        });
-       $('paper-card').css('height', $('paper-card').height() * tmp);
-      });
-
-      
-    				
-  					
-			VK.Auth.getLoginStatus(function(response) { 
+					
+			VK.Auth.getLoginStatus(function keki(response) { 
   if (response.session) {
     				VK.Api.call('users.get', {user_ids: response.session.mid, fields: "photo_medium"}, function(r) { 
   							if(r.response) {
@@ -173,7 +118,7 @@
 					//VK.UI.button('login_button');
 	  </script> 
 
-
+<!--
     <script> 
 		var pages = document.querySelector('iron-pages'); 
 		var tabs = document.querySelector('paper-menu'); 
@@ -208,6 +153,6 @@
  			});
 		});
 		</script>
-
+-->
   </body>
 </html>
