@@ -82,7 +82,6 @@
         <paper-toolbar id="bar">
           <paper-icon-button paper-drawer-toggle icon="menu" style="height: 3em; width: 3em;"></paper-icon-button>
           <h3>TopKek</h3>
-		      <paper-icon-button  icon="account-circle" id="login_button" onclick="VK.Auth.login(authInfo);"></paper-icon-button>
         </paper-toolbar>
 <!--
         <iron-pages selected="{{page}}" valueattr="data-category">
@@ -155,7 +154,6 @@
 					
         //imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 35)+".jpg";
       
-	    function authInfo(response) {
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
 		//alert('Сервер ответил: '+data);
   			if (response.session) {
@@ -173,8 +171,7 @@
 							}); 
   					}
   					else document.location.href = "http://rlvote.96.lt/Test-Polymer/registr.html";
-					}
-					VK.Auth.getLoginStatus(authInfo);
+					
 					//VK.UI.button('login_button');
 	  </script> 
 
