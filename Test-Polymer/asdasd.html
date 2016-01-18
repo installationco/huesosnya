@@ -92,8 +92,10 @@
     	var uname = document.getElementById('name');
 
 					
-			VK.Auth.getLoginStatus(function keki(response) { 
+			VK.Auth.getLoginStatus(keki);
+			function keki(response){
   if (response.session) {
+  	alert(response.session);
     				VK.Api.call('users.get', {user_ids: response.session.mid, fields: "photo_medium"}, function(r) { 
   							if(r.response) {
   								idnomb = response.session.mid;
@@ -101,14 +103,9 @@
 			   					avatar.src = r.response[0].photo_medium;
   							} 
 							}); 
-    				VK.Api.call('friends.get', {user_id: response.session.mid, order: random, fields: "photo_medium"}, function(r) { 
-  							if(r.response) {
-			   					imageKek.src = r.response[0].photo_medium;
-  							} 
-							}); 
   					}
   					else {document.location.href = "http://rlvote.96.lt/Test-Polymer/registr.html";}
-});		
+}	
         //imageKek.src = "http://rlvote.96.lt/Test-Polymer/img/img"+Math.ceil(Math.random() * 35)+".jpg";
       
 	    	//$.get('http://rlvote.96.lt/Test-Polymer/save.php', {message:response.session.mid}, function(data)	{
