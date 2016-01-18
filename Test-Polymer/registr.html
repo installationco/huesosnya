@@ -52,10 +52,20 @@
     </head>
 
     <body unresolved>
-    <h1 style="position: absolute; top: 50%; left: 50%; margin: -10em 0 0 -3em;">Для авторизации нажмите на кнопку:</h1>
-<paper-fab style="position: absolute; top: 50%; left: 50%; height:4em; width:4em; margin: -2em 0 0 -2em; background-color:#4682B4; background-image:url(vk.png); background-size: cover;">
+    <h1>Для авторизации нажмите на кнопку:</h1>
+<paper-fab style="position: absolute; top: 50%; left: 50%; height:4em; width:4em; margin: -2em 0 0 -2em; background-color:#4682B4; background-image:url(vk.png); background-size: cover;" id="login_button" onclick="VK.Auth.login(authInfo);">
 </paper-fab>
-<div style="position: absolute; top: 60%; left: 35%;"><h2>Сохранять анонимность:</h2></div>
-<paper-toggle-button style="position: absolute; top: 60%; left: 60%;"></paper-toggle-button>
+<!--<div style="position: absolute; top: 60%; left: 35%;"><h2>Сохранять анонимность:</h2></div>
+<paper-toggle-button style="position: absolute; top: 60%; left: 60%;"></paper-toggle-button>-->
+
+<script type="text/javascript">
+      function authInfo(response) {
+       if (response.session) {
+        document.location.href = "http://rlvote.96.lt/Test-Polymer/asdasd.html";
+       }
+          }
+          VK.Auth.getLoginStatus(authInfo);
+          //VK.UI.button('login_button');
+    </script> 
       </body>
 </html>
